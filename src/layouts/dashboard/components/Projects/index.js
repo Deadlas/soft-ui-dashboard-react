@@ -64,22 +64,8 @@ function Projects() {
       <SoftBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
         <SoftBox>
           <SoftTypography variant="h6" gutterBottom>
-            Projects
+            Recent Distribution
           </SoftTypography>
-          <SoftBox display="flex" alignItems="center" lineHeight={0}>
-            <Icon
-              sx={{
-                fontWeight: "bold",
-                color: ({ palette: { info } }) => info.main,
-                mt: -0.5,
-              }}
-            >
-              done
-            </Icon>
-            <SoftTypography variant="button" fontWeight="regular" color="text">
-              &nbsp;<strong>30 done</strong> this month
-            </SoftTypography>
-          </SoftBox>
         </SoftBox>
         <SoftBox color="text" px={2}>
           <Icon sx={{ cursor: "pointer", fontWeight: "bold" }} fontSize="small" onClick={openMenu}>
@@ -98,7 +84,45 @@ function Projects() {
           },
         }}
       >
-        <Table columns={columns} rows={rows} />
+        <Table
+          columns={[
+            { name: "name", align: "left" },
+            { name: "function", align: "left" },
+            { name: "employed", align: "center" },
+            { name: "amount", align: "center" },
+            { name: "state", align: "center" },
+          ]}
+          rows={[
+            {
+              name: ["", "Staking Rewards"],
+              function: "Position #93",
+              employed: "8,June,2022",
+              amount: "229 BBTF",
+              state: "pending"
+            },
+            {
+              name: ["", "Staking Rewards"],
+              function: "Position #81",
+              employed: "7,June,2022",
+              amount: "229 BBTF",
+              state: "completed"
+            },
+            {
+              name: ["", "Staking Rewards"],
+              function: "Position #105",
+              employed: "7,June,2022",
+              amount: "229 BBTF",
+              state: "completed"
+            },
+            {
+              name: ["", "Staking Rewards"],
+              function: "Position #33",
+              employed: "6,June,2022",
+              amount: "229 BBTF",
+              state: "completed"
+            },
+          ]}
+        />
       </SoftBox>
     </Card>
   );

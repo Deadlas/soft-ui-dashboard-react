@@ -27,6 +27,7 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import Icon from "@mui/material/Icon";
+import SoftAvatar from "components/SoftAvatar";
 
 // Soft UI Dashboard React components
 import SoftBox from "components/SoftBox";
@@ -143,18 +144,18 @@ function DashboardNavbar({ absolute, light, isMini }) {
     >
       <Toolbar sx={(theme) => navbarContainer(theme)}>
         <SoftBox color="inherit" mb={{ xs: 1, md: 0 }} sx={(theme) => navbarRow(theme, { isMini })}>
-          <Breadcrumbs icon="home" title={route[route.length - 1]} route={route} light={light} />
+          <Breadcrumbs  title={"Staking Dashboard"} route={route} light={light} />
         </SoftBox>
         {isMini ? null : (
           <SoftBox sx={(theme) => navbarRow(theme, { isMini })}>
             <SoftBox pr={1}>
               <SoftInput
-                placeholder="Type here..."
+                placeholder="Search 0x Adress..."
                 icon={{ component: "search", direction: "left" }}
               />
             </SoftBox>
             <SoftBox color={light ? "white" : "inherit"}>
-              <Link to="/authentication/sign-in">
+              {/* <Link to="/authentication/sign-in">
                 <IconButton sx={navbarIconButton} size="small">
                   <Icon
                     sx={({ palette: { dark, white } }) => ({
@@ -171,7 +172,7 @@ function DashboardNavbar({ absolute, light, isMini }) {
                     Sign in
                   </SoftTypography>
                 </IconButton>
-              </Link>
+              </Link> */}
               <IconButton
                 size="small"
                 color="inherit"
@@ -182,16 +183,16 @@ function DashboardNavbar({ absolute, light, isMini }) {
                   {miniSidenav ? "menu_open" : "menu"}
                 </Icon>
               </IconButton>
-              <IconButton
+              {/* <IconButton
                 size="small"
                 color="inherit"
                 sx={navbarIconButton}
                 onClick={handleConfiguratorOpen}
               >
                 <Icon>settings</Icon>
-              </IconButton>
+              </IconButton> */}
               <IconButton
-                size="small"
+                size="lg"
                 color="inherit"
                 sx={navbarIconButton}
                 aria-controls="notification-menu"
@@ -199,10 +200,14 @@ function DashboardNavbar({ absolute, light, isMini }) {
                 variant="contained"
                 onClick={handleOpenMenu}
               >
-                <Icon className={light ? "text-white" : "text-dark"}>notifications</Icon>
+                <Icon className={"text-white"}>notifications</Icon>
               </IconButton>
               {renderMenu()}
             </SoftBox>
+            <SoftBox>
+              <SoftAvatar src="https://bit.ly/3I3pbe6" alt="Avatar" size="sm" />
+            </SoftBox>
+
           </SoftBox>
         )}
       </Toolbar>

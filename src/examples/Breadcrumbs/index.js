@@ -39,7 +39,7 @@ function Breadcrumbs({ icon, title, route, light }) {
           },
         }}
       >
-        <Link to="/">
+        {/* <Link to="/">
           <SoftTypography
             component="span"
             variant="body2"
@@ -64,7 +64,7 @@ function Breadcrumbs({ icon, title, route, light }) {
               {el}
             </SoftTypography>
           </Link>
-        ))}
+        ))} */}
         <SoftTypography
           variant="button"
           fontWeight="regular"
@@ -82,7 +82,7 @@ function Breadcrumbs({ icon, title, route, light }) {
         color={light ? "white" : "dark"}
         noWrap
       >
-        {title.replace("-", " ")}
+        {"track your rewards"}
       </SoftTypography>
     </SoftBox>
   );

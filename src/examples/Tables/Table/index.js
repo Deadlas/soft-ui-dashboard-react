@@ -37,6 +37,9 @@ import colors from "assets/theme/base/colors";
 import typography from "assets/theme/base/typography";
 import borders from "assets/theme/base/borders";
 
+//import png for RecentDistribution
+import icon from "assets/images/Block busters icon 1.png"
+
 function Table({ columns, rows }) {
   const { light } = colors;
   const { size, fontWeightBold } = typography;
@@ -58,6 +61,7 @@ function Table({ columns, rows }) {
     }
 
     return (
+      
       <SoftBox
         key={name}
         component="th"
@@ -94,7 +98,7 @@ function Table({ columns, rows }) {
           >
             <SoftBox display="flex" alignItems="center" py={0.5} px={1}>
               <SoftBox mr={2}>
-                <SoftAvatar src={row[name][0]} name={row[name][1]} variant="rounded" size="sm" />
+                <SoftAvatar src={icon} name={row[name][1]} variant="rounded" size="sm" />
               </SoftBox>
               <SoftTypography variant="button" fontWeight="medium" sx={{ width: "max-content" }}>
                 {row[name][1]}
@@ -133,9 +137,9 @@ function Table({ columns, rows }) {
     () => (
       <TableContainer>
         <MuiTable>
-          <SoftBox component="thead">
+          {/* <SoftBox component="thead">
             <TableRow>{renderColumns}</TableRow>
-          </SoftBox>
+          </SoftBox> */}
           <TableBody>{renderRows}</TableBody>
         </MuiTable>
       </TableContainer>
