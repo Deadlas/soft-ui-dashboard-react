@@ -24,8 +24,9 @@ import Icon from "@mui/material/Icon";
 // Soft UI Dashboard React components
 import SoftBox from "components/SoftBox";
 import SoftTypography from "components/SoftTypography";
+import { grey } from "@mui/material/colors";
 
-function MiniStatisticsCard({ bgColor, title, count, percentage, icon, direction }) {
+function MiniStatisticsCard({ bgColor, title, count, percentage, icon, direction, description }) {
   return (
     <Card>
       <SoftBox bgColor={bgColor} variant="gradient">
@@ -68,9 +69,18 @@ function MiniStatisticsCard({ bgColor, title, count, percentage, icon, direction
                   color={bgColor === "white" ? "dark" : "white"}
                 >
                   {count}{" "}
-                  <SoftTypography variant="button" color={percentage.color} fontWeight="bold">
+                  <SoftTypography variant="button" color={percentage.color} fontWeight="bold" style={{marginLeft:"5%"}}>
                     {percentage.text}
                   </SoftTypography>
+                </SoftTypography>
+                <SoftTypography
+                  variant="button"
+                  color={bgColor === "white" ? "text" : "white"}
+                  opacity={bgColor === "white" ? 1 : 0.7}
+                  textTransform="capitalize"
+                  fontWeight="light"
+                >
+                  {description.text}
                 </SoftTypography>
               </SoftBox>
             </Grid>
@@ -114,6 +124,9 @@ MiniStatisticsCard.defaultProps = {
     text: "",
   },
   direction: "right",
+  description:{
+    fontWeight:"light"
+  }
 };
 
 // Typechecking props for the MiniStatisticsCard
@@ -129,6 +142,10 @@ MiniStatisticsCard.propTypes = {
     "dark",
   ]),
   title: PropTypes.PropTypes.shape({
+    fontWeight: PropTypes.oneOf(["light", "regular", "medium", "bold"]),
+    text: PropTypes.string,
+  }),
+  description: PropTypes.PropTypes.shape({
     fontWeight: PropTypes.oneOf(["light", "regular", "medium", "bold"]),
     text: PropTypes.string,
   }),

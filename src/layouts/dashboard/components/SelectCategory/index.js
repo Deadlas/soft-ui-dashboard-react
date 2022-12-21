@@ -72,15 +72,7 @@ function SelectCastegory() {
                 </SoftBox>
                 {renderMenu}
             </SoftBox>
-            <SoftBox
-                sx={{
-                    "& .MuiTableRow-root:not(:last-child)": {
-                        "& td": {
-                            borderBottom: ({ borders: { borderWidth, borderColor } }) =>
-                                `${borderWidth[1]} solid ${borderColor}`,
-                        },
-                    },
-                }}
+            <SoftBox display="flex" justifyContent="center" alignItems="center" mb={5}
             >
                 <img src={imgpath}></img>
             </SoftBox>
@@ -96,6 +88,9 @@ function SelectCastegory() {
                     </Icon>
                 </SoftBox>
                 {renderMenu}
+            </SoftBox>
+            <SoftBox p={3} style={{borderStyle:"solid", boderColor: "grey",borderWidth:"1px",borderRadius: "5px" }}>
+                dsfdas
             </SoftBox>
             <SoftBox>
                 <SoftButton variant="contained" color="dark">Button</SoftButton>

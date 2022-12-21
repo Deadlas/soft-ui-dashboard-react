@@ -24,9 +24,7 @@ import SoftTypography from "components/SoftTypography";
 // Soft UI Dashboard React examples
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-import Footer from "examples/Footer";
 import MiniStatisticsCard from "examples/Cards/StatisticsCards/MiniStatisticsCard";
-import ReportsBarChart from "examples/Charts/BarCharts/ReportsBarChart";
 import GradientLineChart from "examples/Charts/LineCharts/GradientLineChart";
 
 // Soft UI Dashboard React base styles
@@ -43,6 +41,7 @@ import SelectCastegory from "./components/SelectCategory";
 import reportsBarChartData from "layouts/dashboard/data/reportsBarChartData";
 import gradientLineChartData from "layouts/dashboard/data/gradientLineChartData";
 import RewardTracker from "./components/RewardTracker";
+import ArrowUpward from '@mui/icons-material/ArrowUpward';
 
 function Dashboard() {
   const { size } = typography;
@@ -60,23 +59,26 @@ function Dashboard() {
                 <Grid container spacing={3}>
                   <Grid item xs={12} sm={6} xl={6}>
                     <MiniStatisticsCard
-                      title={{ text: "today's money" }}
-                      count="$53,000"
-                      percentage={{ color: "success", text: "+55%" }}
+                      title={{ text: "Total BBTF staked" }}
+                      description={{text:"Staking Period Began"}}
+                      count="385,420,69"
+                      percentage={{ color: "success", text: "+1.25%" }}
                       icon={{ color: "info", component: "paid" }}
                     />
                   </Grid>
                   <Grid item xs={12} sm={6} xl={6}>
                     <MiniStatisticsCard
-                      title={{ text: "today's users" }}
-                      count="2,300"
+                      title={{ text: "Holder's staked" }}
+                      description={{text:"Staking Period Began"}}
+                      count="4,209"
                       percentage={{ color: "success", text: "+3%" }}
                       icon={{ color: "info", component: "public" }}
                     />
                   </Grid>
                   <Grid item xs={12} sm={6} xl={6}>
                     <MiniStatisticsCard
-                      title={{ text: "new clients" }}
+                      title={{ text: "Total vested Rewards" }}
+                      description={{text:"Staking Period Began"}}
                       count="+3,462"
                       percentage={{ color: "error", text: "-2%" }}
                       icon={{ color: "info", component: "emoji_events" }}
@@ -84,7 +86,8 @@ function Dashboard() {
                   </Grid>
                   <Grid item xs={12} sm={6} xl={6}>
                     <MiniStatisticsCard
-                      title={{ text: "sales" }}
+                      title={{ text: "Earned Rewards" }}
+                      description={{text:"Staking Period Began"}}
                       count="$103,430"
                       percentage={{ color: "success", text: "+5%" }}
                       icon={{

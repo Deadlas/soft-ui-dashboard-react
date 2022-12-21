@@ -68,15 +68,18 @@ function Breadcrumbs({ icon, title, route, light }) {
         <SoftTypography
           variant="button"
           fontWeight="regular"
+          fontSize='22px'
+          className = 'mb-3'
           textTransform="capitalize"
           color={light ? "white" : "dark"}
-          sx={{ lineHeight: 0 }}
+          sx={{ lineHeight: 2 }}
         >
           {title.replace("-", " ")}
         </SoftTypography>
       </MuiBreadcrumbs>
       <SoftTypography
-        fontWeight="bold"
+        // fontWeight="bold"
+        fontSize='12px'
         textTransform="capitalize"
         variant="h6"
         color={light ? "white" : "dark"}
