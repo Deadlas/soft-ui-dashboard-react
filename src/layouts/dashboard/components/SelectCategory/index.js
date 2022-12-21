@@ -27,6 +27,7 @@ import SoftTypography from "components/SoftTypography";
 import SoftButton from "components/SoftButton";
 
 import imgpath from "assets/images/BBTF.png"
+import { textTransform } from "@mui/system";
 
 
 
@@ -61,13 +62,13 @@ function SelectCastegory() {
         <Card>
             <SoftBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
                 <SoftBox>
-                    <SoftTypography variant="h6" gutterBottom>
+                    <SoftTypography variant="h4" gutterBottom>
                         $BBTF
                     </SoftTypography>
                 </SoftBox>
                 <SoftBox color="text" px={2}>
                     <Icon sx={{ cursor: "pointer", fontWeight: "bold" }} fontSize="small" onClick={openMenu}>
-                        more_vert
+                        more_horizon
                     </Icon>
                 </SoftBox>
                 {renderMenu}
@@ -78,23 +79,29 @@ function SelectCastegory() {
             </SoftBox>
             <SoftBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
                 <SoftBox>
-                    <SoftTypography variant="h6" gutterBottom>
+                    <SoftTypography variant="h4" gutterBottom>
                         Time Elapsed
                     </SoftTypography>
                 </SoftBox>
                 <SoftBox color="text" px={2}>
                     <Icon sx={{ cursor: "pointer", fontWeight: "bold" }} fontSize="small" onClick={openMenu}>
-                        more_vert
+                        more_horizon
                     </Icon>
                 </SoftBox>
                 {renderMenu}
             </SoftBox>
-            <SoftBox p={3} style={{borderStyle:"solid", boderColor: "grey",borderWidth:"1px",borderRadius: "5px" }}>
-                dsfdas
+            <SoftBox m={3} p={1} style={{borderStyle:"solid", color: "silver", borderWidth:"1px",borderRadius: "10px", display:'flex' }}>
+                <div style = {{display: 'inline-block', width: '70%'}}>
+                    <div style={{color: '#15134B'}}>Staking Time</div>
+                    <div>Start Date: 12/22/2022</div>
+                </div>
+                <div style = {{display: 'flex', alignItem:'center', width: '30%', fontSize:'30px', color:'#563BFF'}}>
+                        68Days
+                </div>
             </SoftBox>
-            <SoftBox>
-                <SoftButton variant="contained" color="dark">Button</SoftButton>
-                <SoftButton variant="contained" color="dark">Button</SoftButton>
+            <SoftBox m={3} p={1} style={{display:'flex', justifyContent:'space-between'}}>
+                <SoftButton style={{minWidth:'42%', minHeight:'50px', textTransform:'capitalize', fontSize:'20px', fontWeight:'400'}} variant="contained" color="dark">+ Compound</SoftButton>
+                <SoftButton style={{minWidth:'42%', minHeight:'50px', textTransform:'capitalize', fontSize:'20px', fontWeight:'400'}} variant="contained" color="dark">+ Withdraw Rewards</SoftButton>
             </SoftBox>
         </Card>
     );
